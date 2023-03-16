@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-.vscode/settings.json
+.vscode/
 
 # C extensions
 *.so
@@ -71,8 +71,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/*
 !docs/_build/html
+docs/*
 
 # PyBuilder
 .pybuilder/
