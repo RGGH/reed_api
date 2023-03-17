@@ -1,6 +1,7 @@
 """ Get the Jobs from Reed using the Reed API """
 import json
 import os
+from typing import Generator
 
 import requests
 from dotenv import load_dotenv
@@ -24,13 +25,13 @@ def get_jobs(base_url: str, auth: tuple, params: dict) -> str:
     return result["results"]
 
 
-def generator_jobs():
+def generator_jobs() -> Generator[str, None, None]:
     """
     Returns a generator of jobs ready to print
     """
     res = get_jobs(base_url, auth, params)
     for i in res:
-        yield (i["jobTitle"])
+        yield (i["jobTitle"], i["jobDescription"])
 
 
 print(*generator_jobs(), sep="\n")
