@@ -11,7 +11,7 @@ load_dotenv()
 base_url = "https://www.reed.co.uk/api/1.0/search"
 api_key = os.getenv("API_KEY")
 auth = (api_key, "")
-params = {"keywords": "Rust", "resultsToTake": 2, "resultsToSkip": 10}
+params = {"keywords": "Rust", "resultsToTake": 4, "resultsToSkip": 10}
 
 
 def get_jobs(base_url: str, auth: tuple, params: dict) -> str:
@@ -27,7 +27,7 @@ def get_jobs(base_url: str, auth: tuple, params: dict) -> str:
 
 def generator_jobs() -> Generator[str, None, None]:
     """
-    Returns a generator of jobs ready to print
+    Returns a generator of jobs and descriptions ready to print
     """
     res = get_jobs(base_url, auth, params)
     for i in res:
