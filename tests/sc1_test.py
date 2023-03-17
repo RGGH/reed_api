@@ -11,7 +11,7 @@ auth = (api_key, "")
 
 def test_generator_jobs():
     """
-    Test the print from generator
+    Test the print from generator comprehension
     """
     assert generator_jobs() !=0
 

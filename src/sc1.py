@@ -33,5 +33,5 @@ def generator_jobs() -> Generator[str, None, None]:
     for i in res:
         yield (i["jobTitle"], i["jobDescription"])
 
-
+# test
 print(*generator_jobs(), sep="\n")
