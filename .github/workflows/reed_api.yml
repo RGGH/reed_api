@@ -1,6 +1,6 @@
 name: reed-api
  
-# execute this workflow automatically when a we push to master
+# execute this workflow automatically when a we push to master!
 on:
   push:
     branches: [ master ]
