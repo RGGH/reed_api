@@ -52,5 +52,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           force: true
+          set-safe-directory: '*'
           directory: ./docs/_build/html
-
