@@ -11,6 +11,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
     - uses: actions/checkout@v1
     - uses: ammaraskar/sphinx-action@master
       with:
