@@ -1,4 +1,4 @@
-name: "Pull Request Docs Check"
+name: "sphinx"
 on:
   push:
      branches:
@@ -8,13 +8,11 @@ on:
       - master
 
 jobs:
-  docs:
+  build:
+    name: Push Sphinx Pages
     runs-on: ubuntu-latest
     steps:
-    - name: Install dependencies
-      run: |
-        pip install sphinx_rtd_theme
-    - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@master
+    - uses: seanzhengw/sphinx-pages@master
       with:
-        docs-folder: "docs/"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        create_readme: true
